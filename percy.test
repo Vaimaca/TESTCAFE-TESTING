@@ -1,0 +1,23 @@
+import {Selector} from 'testcafe'
+import percySnapshot from '@percy/testcafe'
+import FeedbackPage from '../page_objects/pages/FeedbackPage'
+
+const feebackPage = new FeedbackPage()
+
+fixture `Visual Regression Test with Percy`
+.page `http://zero.webappsecurity.com/index.html`
+
+const feedbackButton = '#feedback'
+
+// test("Percy Demo - Example Page", async t => {
+//     await t.wait(1000);
+//     await percySnapshot(t, 'Example Page');
+// });
+test.skip('Clear button works', async t => {
+    await t.click(feedbackButton)
+    await t.typeText(feebackPage.userName, 'Jules', {paste: true})
+    await t.click(feebackPage.clearButton)
+    await t.expect(feebackPage.userNameText.exists).notOk()
+    await t.wait(1000);
+    await percySnapshot(t, 'Feedback Page');
+})

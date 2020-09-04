@@ -1,0 +1,8 @@
+Notes:
+for PowerShell setup of Percy use: 
+$env:PERCY_TOKEN = "token"
+
+For Jenkins use refer to parameter name with %Branch% or ${Branch}
+
+Percy works on Node.js 12 but Testcafe works on Node.js 10
+

@@ -1,0 +1,36 @@
+{
+  "name": "testcafe-testing",
+  "version": "1.0.0",
+  "description": "Automated testing with Testcafe",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "testcafe chrome ./test",
+    "test:chrome:headless:5": "testcafe -c 5 chrome:headless ./test",
+    "test:chrome:headless": "testcafe chrome:headless ./test -q",
+    "test:chrome:mobile": "testcafe chrome:emulation:device=iphone X ./test",
+    "test:chrome:incognito": "testcafe chrome -incognito ./test",
+    "test:firefox": "testcafe firefox ./test",
+    "test:edge_screenshot": "testcafe edge ./test -s takeOnFails=true",
+    "test:edge": "testcafe edge ./test --reporter json",
+    "test:browsers:headless": "testcafe chrome:headless,firefox:headless,edge:headless ./test",
+    "test:percy": "percy exec -- testcafe edge ./test",
+    "start:jenkins": "java -jar jenkins.war -httpPort8080 --enable-future-java"
+  },
+  "keywords": [
+    "TestCafe",
+    "Testing",
+    "Automation"
+  ],
+  "author": "Claudio Di Giacomo",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^2.0.5",
+    "testcafe": "^1.8.8",
+    "testcafe-reporter-json": "^2.2.0",
+    "testcafe-reporter-list": "^2.1.0",
+    "testcafe-reporter-minimal": "^2.1.0",
+    "testcafe-reporter-nunit": "^0.1.2",
+    "testcafe-reporter-xunit": "^2.1.0"
+  },
+  "devDependencies": {}
+}

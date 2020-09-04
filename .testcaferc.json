@@ -1,0 +1,5 @@
+// Setup for screenshots
+{
+    "screenshotPath": "./screenshots",
+    "screenshotPathPattern": "${DATE}_${TIME}/${FIXTURE}"
+}
